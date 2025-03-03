@@ -1,0 +1,8 @@
+class Solution:
+    def mergeArrays(self, nums1: List[List[int]], nums2: List[List[int]]) -> List[List[int]]:
+        ansMap = {}
+        for tup in nums1:
+            ansMap[tup[0]] = ansMap.get(tup[0], 0) + tup[1]
+        for tup2 in nums2:
+            ansMap[tup2[0]] = ansMap.get(tup2[0], 0) + tup2[1]        
+        return sorted([[key, value] for key, value in ansMap.items()])
